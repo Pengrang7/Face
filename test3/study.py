@@ -3,13 +3,13 @@ import numpy as np
 import os
 from PIL import Image
 
-path = 'C:/python/test3/dataset'
+path = 'C:/Users/China/PycharmProjects/pythonProject/Face-main/Face-main/test3/dataset'
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml");
 
 
 def getImagesAndLabels(path):
-    imagePaths = [os.path.join(path, f) for f in os.listdir('C:/python/test3/dataset')]
+    imagePaths = [os.path.join(path, f) for f in os.listdir('C:/Users/China/PycharmProjects/pythonProject/Face-main/Face-main/test3/dataset')]
     faceSamples = []
     ids = []
 
@@ -31,3 +31,5 @@ faces, ids = getImagesAndLabels(path)
 recognizer.train(faces, np.array(ids))
 
 recognizer.write('trainer/trainer.yml')
+
+print("Model Training Complete!!!!!")

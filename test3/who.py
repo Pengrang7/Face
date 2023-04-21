@@ -11,7 +11,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 id = 0
 
-names = ['None', 'changhwan']
+names = ['None', 'elon', 'suejin']
 
 cam = cv2.VideoCapture(0)
 cam.set(3, 640)  # set video widht
@@ -37,7 +37,7 @@ while True:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         id, confidence = recognizer.predict(gray[y:y + h, x:x + w])
 
-        if (confidence < 100):
+        if (confidence < 90):
             id = names[id]
             confidence = "  {0}%".format(round(100 - confidence))
 

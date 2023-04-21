@@ -1,9 +1,12 @@
 import cv2
-import os
 
 cam = cv2.VideoCapture(0)
 cam.set(3, 640)  # set video width
 cam.set(4, 480)  # set video height
+
+if not cam.isOpened():
+    print("Could not open webcam")
+    exit()
 
 face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
